@@ -11,6 +11,12 @@ public class ParkingBoy {
 
 	public ParkingTicket park(Car car) {
 		lastErrorMessage = null;
+		if (parkingLot.getAvailableParkingPosition() <= 0) {
+
+			this.lastErrorMessage = "The parking lot is full.";
+			return null;
+		}
+
 		return parkingLot.park(car);
 	}
 
@@ -26,10 +32,8 @@ public class ParkingBoy {
 		return car;
 	}
 
-	
-
 	public String getLastErrorMessage() {
-
 		return lastErrorMessage;
 	}
+
 }

@@ -22,9 +22,6 @@ public class ParkingLot {
 	public ParkingTicket park(Car car) {
 		ParkingTicket ticket = new ParkingTicket();
 		cars.put(ticket, car);
-		if(getAvailableParkingPosition() <= 0) {
-			return null;
-		}
 		return ticket;
 	}
 
