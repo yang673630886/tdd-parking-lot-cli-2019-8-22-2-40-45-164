@@ -24,7 +24,6 @@ public class ParkingBoy {
 			lastErrorMessage = "Unrecognized parking ticket.";
 		}
 		return car;
-
 	}
 
 	

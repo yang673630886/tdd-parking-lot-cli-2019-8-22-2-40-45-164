@@ -100,18 +100,18 @@ class ParkingBoyFacts {
             "Please provide your parking ticket.",
             parkingBoy.getLastErrorMessage());
     }
-//
-//    @Test
-//    void should_not_fetch_any_car_once_ticket_has_been_used() {
-//        ParkingLot parkingLot = new ParkingLot();
-//        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
-//        Car car = new Car();
-//
-//        ParkingTicket ticket = parkingBoy.park(car);
-//        parkingBoy.fetch(ticket);
-//
-//        assertNull(parkingBoy.fetch(ticket));
-//    }
+
+    @Test
+    void should_not_fetch_any_car_once_ticket_has_been_used() {
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        Car car = new Car();
+
+        ParkingTicket ticket = parkingBoy.park(car);
+        parkingBoy.fetch(ticket);
+
+        assertNull(parkingBoy.fetch(ticket));
+    }
 //
 //    @Test
 //    void should_query_error_message_for_used_ticket() {
