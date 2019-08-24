@@ -2,26 +2,28 @@ package com.oocl.cultivation;
 
 public class ParkingBoy {
 
-    private final ParkingLot parkingLot;
-    private String lastErrorMessage;
+	private final ParkingLot parkingLot;
+	private String lastErrorMessage;
 
-    public ParkingBoy(ParkingLot parkingLot) {
-        this.parkingLot = parkingLot;
-    }
+	public ParkingBoy(ParkingLot parkingLot) {
+		this.parkingLot = parkingLot;
+	}
 
-    public ParkingTicket park(Car car) {
-        // TODO: Please implement the method
-//        throw new RuntimeException("Not implemented");
-    	return parkingLot.park(car);
-    }
+	public ParkingTicket park(Car car) {
+		lastErrorMessage = null;
+		return parkingLot.park(car);
+	}
 
-    public Car fetch(ParkingTicket ticket) {
-        // TODO: Please implement the method
-//        throw new RuntimeException("Not implemented");
-    	return parkingLot.fetch(ticket);
-    }
+	public Car fetch(ParkingTicket ticket) {
+		Car car = parkingLot.fetch(ticket);
+		if (car == null) {
+			lastErrorMessage = "Unrecognized parking ticket.";
+		}
+		return car;
+	}
 
-    public String getLastErrorMessage() {
-        return lastErrorMessage;
-    }
+	public String getLastErrorMessage() {
+		
+		return lastErrorMessage;
+	}
 }
